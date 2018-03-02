@@ -3,6 +3,9 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatSelectModule,
+  MatSliderModule,
+  MatCardModule,
+  MatToolbarModule,
   MatButtonModule
 } from '@angular/material';
 
@@ -11,6 +14,9 @@ import {
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatSliderModule,
+    MatCardModule,
+    MatToolbarModule,
     MatButtonModule
   ]
 })

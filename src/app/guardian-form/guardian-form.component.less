@@ -1,0 +1,28 @@
+@import "../../variables";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: @default-spacing * 1.5;
+}
+
+div,
+.mat-card,
+.mat-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-card {
+  &:not(:first-child) {
+    margin-top: @default-spacing * 1.5;
+  }
+}
+
+.mat-form-field-infix {
+  width: 100%;
+  
+  .mat-slider-horizontal {
+    height: 24px;
+  }
+}
