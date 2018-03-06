@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-guardian-form',
   templateUrl: './guardian-form.component.html',
   styleUrls: ['./guardian-form.component.less']
 })
-export class GuardianFormComponent {
+export class GuardianFormComponent implements OnInit {
 
   contactMethods = [
     'Email',
@@ -28,11 +30,16 @@ export class GuardianFormComponent {
   ];
 
   form: FormGroup;
+  data: Observable<any>;
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private db: AngularFirestore
   ) {
     this.initForm();
+  }
+
+  ngOnInit() {
   }
 
   getSkillLevelText(level: number) {
@@ -79,7 +86,7 @@ export class GuardianFormComponent {
       homePhone: ['', Validators.required],
       mobilePhone: ['', Validators.required],
       email: ['', Validators.required],
-      preferredContactMethod: ['Email', Validators.required],
+      contactMethod: ['Email', Validators.required],
       address: this.initAddress()
     });
   }

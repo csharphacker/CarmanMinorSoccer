@@ -28,7 +28,7 @@
       </mat-form-field>
       <mat-form-field>
         <mat-label>Preferred Contact Method</mat-label>
-        <mat-select formControlName="preferredContactMethod">
+        <mat-select formControlName="contactMethod">
           <mat-option *ngFor="let method of contactMethods" [value]="method">
             {{ method }}
           </mat-option>
