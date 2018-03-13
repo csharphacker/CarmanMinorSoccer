@@ -1,0 +1,4 @@
+<mat-card *ngFor="let spot of spots">
+  <span>{{ spot.ageRange }}</span>
+  <span>{{ spot.total - spot.available }}</span>/<span>{{ spot.total }}</span>
+</mat-card>

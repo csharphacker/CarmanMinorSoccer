@@ -6,12 +6,13 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
-import { AppRoutingModule } from './app-routing.module';
+// import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GuardianFormComponent } from './guardian-form/guardian-form.component';
 import { MaterialModule } from './material.module';
 import { environment } from '../environments/environment';
 import { AuthenticationService } from './authentication.service';
+import { AvailableRegistrationsComponent } from './available-registrations/available-registrations.component';
 
 function anonymousLoginFactory(service: AuthenticationService) {
   return () => service.anonymousLogin();
@@ -21,7 +22,7 @@ function anonymousLoginFactory(service: AuthenticationService) {
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
+    // AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
@@ -31,7 +32,8 @@ function anonymousLoginFactory(service: AuthenticationService) {
   ],
   declarations: [
     AppComponent,
-    GuardianFormComponent
+    GuardianFormComponent,
+    // AvailableRegistrationsComponent
   ],
   providers: [
     AuthenticationService,

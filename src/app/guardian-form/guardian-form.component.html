@@ -48,6 +48,10 @@
           <input matInput formControlName="postal" />
         </mat-form-field>
       </div>
+      <mat-form-field>
+        <mat-label>Number of players to register</mat-label>
+        <input type="number" matInput min="1" step="1" #numberOfPlayers (change)="onNumberOfPlayersChanged(numberOfPlayers.value)" />
+      </mat-form-field>
     </mat-card-content>
   </mat-card>
   <mat-card formArrayName="players" *ngFor="let player of form.get('players').controls; let i = index;">
@@ -82,7 +86,6 @@
             {{ group }}
           </mat-option>
         </mat-select>
-        <mat-hint>This is hint text</mat-hint>
       </mat-form-field>
       <div class="mat-input-container mat-form-field ng-tns-c4-5 mat-primary mat-form-field-type-mat-select mat-form-field-can-float ng-untouched ng-pristine ng-valid mat-form-field-should-float">
         <div class="mat-input-wrapper mat-form-field-wrapper">
@@ -106,14 +109,15 @@
           </div>
         </div>
       </div>
-
-      <!-- <label class="mat-input-placeholder">Skill Level</label>
-      
-      <div class="mat-input-subscript-wrapper">
-        <p class="mat-hint">{{ getSkillLevelText(slider.value) }}</p>
-      </div> -->
     </mat-card-content>
   </mat-card>
-</div>
 
-<p>Form value: {{ form.value | json }}</p>
+  <div class="button-bar">
+    <button mat-raised-button color="primary"
+      [disabled]="buttonDisabled"
+      (click)="onRegisterClicked()"
+    >
+      Register!
+    </button>
+  </div>
+</div>
